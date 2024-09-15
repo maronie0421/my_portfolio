@@ -1,0 +1,187 @@
+@use "sass:map";
+
+$main-color: #FFCCCC;
+$background-color: #FDEEEF;
+$text-color:#333333;
+$font-base: "Inter", sans-serif;
+
+$header-height-sp: 60px;
+$header-height-pc: 70px;
+
+/* 1⃣ブレークポイントの定義*/
+$breakpoints: (
+  sm: "screen and (min-width: 600px)",
+  md: "screen and (min-width: 768px)",
+  lg: "screen and (min-width: 900px)",
+  xl: "screen and (min-width: 1200px)",
+);
+
+/* 2⃣mixinを記述 */
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+body {
+  background: $background-color;
+  font-family: $font-base; /* google fonts変数 */
+  color: $text-color; /* フォントカラー変数 */
+  font-size: 16px; /* フォントサイズ */
+  line-height: 1.7; /* 行の高さ（行間） */
+  font-weight: 300; /* フォント太さ */
+}
+
+.inner {
+  padding-inline: 15px;
+
+  @include mq(md) {
+    max-width: calc(1200px + 40px *2);
+    padding-inline: 40px;
+  }
+}
+
+.header {}
+
+.header__inner {
+  height: $header-height-sp;
+  background: $main-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include mq(md) {
+    height: $header-height-pc;
+  }
+}
+
+.header__logo {
+  a{
+    img {
+      width: 40px;
+      display: block;
+
+      @include mq(md) {
+        width: 50px;
+      }
+    }
+  }
+}
+
+.header__nav {}
+
+.header__lists {
+  display: none;
+
+  @include mq(md) {
+    display: flex;
+    gap: 40px;
+  }
+}
+
+.header__list {
+  a {}
+}
+
+.header__link {
+  @include mq(md) {
+    font-family: Limelight;
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+  }
+}
+
+.header__icon {
+  @include mq(md) {
+    display: none;
+  }
+}
+
+.drawer-icon {
+  width: 30px;
+  height: 18px;
+  position: relative;
+}
+
+.drawer-icon__bar {
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  left: 0;
+  background: #fff;
+
+  &:nth-child(1) {
+    top: 0;
+  }
+  &:nth-child(2) {
+    top: 8px;
+  }
+  &:nth-child(3) {
+    top: 16px;
+  }
+}
+
+.main {}
+
+.fv {
+  background: url(../img/sp/sp-first-view.png) no-repeat top center / cover;
+  padding-block: 14px 168px;
+
+  @include mq(md) {
+    background-image: url(../img/first-view.png);
+    padding-block: 15px 215px;
+  }
+}
+
+.fv__inner {}
+
+// .fv__slogan {
+//   text-align: center;
+// }
+
+.fv__content {}
+
+.fv__name {
+  font-size: 24px;
+
+  @include mq(md) {
+    font-size: 48px;
+  }
+}
+
+.fv__title {
+
+  @include mq(md) {
+    font-size: 24px;
+  }
+}
+
+
+.fv__message {
+  text-align: center;
+  padding-top: 90px;
+
+  @include mq(md) {
+    padding-top: 70px;
+  }
+}
+
+.fv__slogan {
+  font-family: "Rampart One";
+  font-size: 64px;
+  font-weight: 400;
+
+  @include mq(md) {
+    font-size: 128px;
+  }
+}
+
+.fv__text {
+  @include mq(md) {
+    font-size: 24px;
+  }
+}
+
+
+
