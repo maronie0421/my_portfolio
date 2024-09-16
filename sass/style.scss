@@ -41,6 +41,50 @@ body {
   }
 }
 
+// 共通パーツ（見出し）
+.heading {
+  font-family: Limelight;
+  font-size: 40px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 1;
+
+  @include mq(md) {
+    font-size: 64px;
+    text-align: left;
+  }
+}
+
+// 共通パーツ（ボタン）
+.button {
+  display: inline-block;
+  min-width: 158px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 30px;
+  background: $main-color;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.02px;
+}
+
+.section {}
+
+.section__head {}
+
+.section__content {
+  margin-top: 30px;
+
+  @include mq(md) {
+    margin-top: 60px;
+  }
+}
+
+
+
+
+
+// header
 .header {}
 
 .header__inner {
@@ -122,8 +166,19 @@ body {
   }
 }
 
-.main {}
 
+//sectionごとの空白
+.main {
+  display: grid;
+  gap: 80px;
+
+  @include mq(md) {
+    gap: 160px;
+  }
+}
+
+
+// fv
 .fv {
   background: url(../img/sp/sp-first-view.png) no-repeat top center / cover;
   padding-block: 14px 168px;
@@ -136,14 +191,11 @@ body {
 
 .fv__inner {}
 
-// .fv__slogan {
-//   text-align: center;
-// }
-
 .fv__content {}
 
 .fv__name {
   font-size: 24px;
+  line-height: 1;
 
   @include mq(md) {
     font-size: 48px;
@@ -180,8 +232,71 @@ body {
 .fv__text {
   @include mq(md) {
     font-size: 24px;
+    line-height: 2;
   }
 }
 
 
+//profile
+.profile {}
+
+.profile__inner {}
+
+.profile__content {
+  @include mq(md) {
+    display: flex;
+    gap: 150px;
+  }
+}
+
+.profile__image {
+  text-align: center;
+  img {
+    width: 200px;
+
+    @include mq(md) {
+      width: 300px;
+    }
+  }
+}
+
+.profile__message {
+  margin-top: 30px;
+
+  @include mq(md) {
+    margin-top: 0;
+  }
+}
+
+.profile__name {
+  margin-top: 30px;
+  text-align: center;
+  font-family: Limelight;
+  font-size: 24px;
+  font-weight: 400;
+
+  @include mq(md) {
+    margin-top: 0;
+    text-align: left;
+    font-size: 32px;
+  }
+}
+
+.profile__text {
+  margin-top: 30px;
+  font-size: 14px;
+
+  @include mq(md) {
+    font-size: 16px;
+  }
+}
+
+.profile__button {
+  margin-top: 30px;
+  text-align: center;
+
+  @include mq(md) {
+    margin-top: 0;
+  }
+}
 
