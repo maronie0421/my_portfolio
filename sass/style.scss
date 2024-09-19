@@ -85,11 +85,12 @@ body {
 
 
 // header
-.header {}
+.header {
+  background: $main-color;
+}
 
 .header__inner {
   height: $header-height-sp;
-  background: $main-color;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -245,7 +246,7 @@ body {
 .profile__content {
   padding-left: 30px;
   padding-right: 30px;
-  
+
   @include mq(md) {
     display: flex;
     gap: 150px;
@@ -343,6 +344,44 @@ body {
     }
   }
 }
+
+.works {}
+
+.works__inner {}
+
+.works__content {}
+
+.works__cards {
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(2, 3fr);
+  gap: 34px 20px;
+}
+
+.works__card {
+}
+
+.works-card {
+
+}
+
+.works-card__image {
+  width: 500px;
+  img {
+    width: 100%;
+  }
+}
+
+.works-card__body {
+text-align: left;
+}
+
+.works-card__title {}
+
+.works-card__text {}
+
+
+
 
 
 
