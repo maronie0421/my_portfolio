@@ -169,14 +169,14 @@ body {
 
 
 //sectionごとの空白
-.main {
-  display: grid;
-  gap: 80px;
+// .main {
+//   display: grid;
+//   gap: 80px;
 
-  @include mq(md) {
-    gap: 160px;
-  }
-}
+//   @include mq(md) {
+//     gap: 160px;
+//   }
+// }
 
 
 // fv
