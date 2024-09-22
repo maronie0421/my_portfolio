@@ -426,11 +426,79 @@ body {
 
 .contact {}
 
-.contact__inner {}
+.contact__inner {
+  background: $main-color;
+  margin-top: 80px;
+  padding: 10px 0;
 
-.contact__head {}
+  @include mq(md) {
+    margin-top: 100px;
+    padding: 20px 0;
+  }
+}
 
-.contact__address {}
+.contact__head {
+  color: #fff;
+
+  @include mq(md) {
+    text-align: center;
+  }
+}
+
+.contact__address {
+  color: #fff;
+  font-size: 30px;
+  font-style: italic;
+  text-align: center;
+  margin-top: 10px;
+
+  @include mq(md) {
+    font-size: 80px;
+    line-height: 1.5;
+  }
+}
+
+
+// career
+
+
+
+
+
+// footer
+.footer {}
+
+.footer__inner {
+  background: $main-color;
+}
+
+.footer__content {
+  display: flex;
+  flex-direction: column;
+
+  @include mq(md) {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.footer__icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer__icon {
+  color: #fff;
+  font-size: 40px;
+
+}
+
+.footer__text {
+  color: #fff;
+  text-align: center;
+}
 
 
 
