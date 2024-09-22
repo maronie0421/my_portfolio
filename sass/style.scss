@@ -374,6 +374,7 @@ body {
 }
 
 .works__content {
+  padding: 0 20px;
 
   @include mq(md) {
     padding: 0px 30px;
@@ -381,6 +382,9 @@ body {
 }
 
 .works__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
   text-align: center;
 
   @include mq(md) {
