@@ -460,9 +460,39 @@ body {
 
 
 // career
+.career {}
 
+.career__inner {
+margin-top: 90px;
+}
 
+.career__content {
+  padding: 0 30px;
+}
 
+.career__lists {}
+
+.career__list {
+  display: flex;
+  gap: 30px;
+}
+
+.career__date {
+  white-space: nowrap;
+  font-size: 12px;
+
+  @include mq(md) {
+    font-size: 17px;
+  }
+}
+
+.career__text {
+  font-size: 14px;
+
+  @include mq(md) {
+    font-size: 20px;
+  }
+}
 
 
 // footer
@@ -499,6 +529,7 @@ body {
   color: #fff;
   text-align: center;
 }
+
 
 
 
