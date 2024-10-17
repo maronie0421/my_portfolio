@@ -4,7 +4,7 @@
 $main-color: #FFCCCC;
 $background-color: #FDEEEF;
 $text-color:#333333;
-$font-base: "Inter", sans-serif;
+$font-base: "Inter", "Noto Serif JP";
 
 $header-height-sp: 60px;
 $header-height-pc: 70px;
@@ -37,7 +37,7 @@ body {
   padding-inline: 15px;
 
   @include mq(md) {
-    // max-width: calc(1200px + 40px *2);
+    max-width: calc(1200px + 40px *2);
     padding-inline: 40px;
   }
 }
@@ -67,6 +67,13 @@ body {
   color: #fff;
   font-weight: 700;
   letter-spacing: 0.02px;
+  transition: color 0.3s, background-color 0.3s;
+
+  &:hover {
+    color:$main-color;
+    background-color: #fff;
+  }
+
 }
 
 .section {}
@@ -98,6 +105,7 @@ body {
 
   @include mq(md) {
     height: $header-height-pc;
+    margin: 0 auto;
   }
 }
 
@@ -267,6 +275,7 @@ body {
 
 .profile__image {
   text-align: center;
+  clip-path: ellipse(48% 50% at 48% 50%);
   img {
     width: 200px;
 
@@ -302,6 +311,7 @@ body {
 .profile__text {
   margin-top: 30px;
   font-size: 14px;
+  line-height: 1.85;
 
   @include mq(md) {
     font-size: 16px;
@@ -351,7 +361,7 @@ body {
   text-align: center;
 
   @include mq(md) {
-    font-size: 100px;
+    font-size: 90px;
   }
 
   p {
@@ -436,15 +446,21 @@ margin-top: 90px;
   padding: 0 30px;
 }
 
-.career__lists {}
+.career__lists {
+  @include mq(md) {
+  padding-left: 30px;
+  }
+}
 
 .career__list {
   display: flex;
-  gap: 30px;
-  margin-top: 10px;
+  flex-direction: column;
+  margin-top: 30px;
 
   @include mq(md) {
+    flex-direction: row;
     margin-top: 30px;
+    gap: 50px;
   }
 }
 
@@ -458,7 +474,7 @@ margin-top: 90px;
 }
 
 .career__text {
-  font-size: 14px;
+  font-size: 13px;
 
   @include mq(md) {
     font-size: 20px;
@@ -472,7 +488,9 @@ margin-top: 90px;
   margin-top: 90px;
 }
 
-.strength__content {}
+.strength__content {
+  padding: 0 30px;
+}
 
 .strength__cards {
   display: grid;
@@ -498,6 +516,7 @@ margin-top: 90px;
 .strength__title {
   white-space: nowrap;
   font-size: 17px;
+  font-weight: 600;
 
   @include mq(md) {
     font-size: 25px;
@@ -507,7 +526,7 @@ margin-top: 90px;
 .strength__text {
   max-width: calc(345px + 15px * 2);
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 13px;
 
   @include mq(md) {
     max-width: 900px;

@@ -3,7 +3,7 @@
 /* 2⃣mixinを記述 */
 body {
   background: #FDEEEF;
-  font-family: "Inter", sans-serif; /* google fonts変数 */
+  font-family: "Inter", "Noto Serif JP"; /* google fonts変数 */
   color: #333333; /* フォントカラー変数 */
   font-size: 16px; /* フォントサイズ */
   line-height: 1.7; /* 行の高さ（行間） */
@@ -15,6 +15,7 @@ body {
 }
 @media screen and (min-width: 768px) {
   .inner {
+    max-width: 1280px;
     padding-inline: 40px;
   }
 }
@@ -43,6 +44,12 @@ body {
   color: #fff;
   font-weight: 700;
   letter-spacing: 0.02px;
+  -webkit-transition: color 0.3s, background-color 0.3s;
+  transition: color 0.3s, background-color 0.3s;
+}
+.button:hover {
+  color: #FFCCCC;
+  background-color: #fff;
 }
 
 .section__content {
@@ -73,6 +80,7 @@ body {
 @media screen and (min-width: 768px) {
   .header__inner {
     height: 70px;
+    margin: 0 auto;
   }
 }
 
@@ -215,6 +223,8 @@ body {
 
 .profile__image {
   text-align: center;
+  -webkit-clip-path: ellipse(48% 50% at 48% 50%);
+          clip-path: ellipse(48% 50% at 48% 50%);
 }
 .profile__image img {
   width: 200px;
@@ -252,6 +262,7 @@ body {
 .profile__text {
   margin-top: 30px;
   font-size: 14px;
+  line-height: 1.85;
 }
 @media screen and (min-width: 768px) {
   .profile__text {
@@ -304,7 +315,7 @@ body {
 }
 @media screen and (min-width: 768px) {
   .skill__icon {
-    font-size: 100px;
+    font-size: 90px;
   }
 }
 .skill__icon p {
@@ -391,16 +402,30 @@ body {
   padding: 0 30px;
 }
 
+@media screen and (min-width: 768px) {
+  .career__lists {
+    padding-left: 30px;
+  }
+}
+
 .career__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 30px;
-  margin-top: 10px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 30px;
 }
 @media screen and (min-width: 768px) {
   .career__list {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     margin-top: 30px;
+    gap: 50px;
   }
 }
 
@@ -415,7 +440,7 @@ body {
 }
 
 .career__text {
-  font-size: 14px;
+  font-size: 13px;
 }
 @media screen and (min-width: 768px) {
   .career__text {
@@ -425,6 +450,10 @@ body {
 
 .strength__inner {
   margin-top: 90px;
+}
+
+.strength__content {
+  padding: 0 30px;
 }
 
 .strength__cards {
@@ -461,6 +490,7 @@ body {
 .strength__title {
   white-space: nowrap;
   font-size: 17px;
+  font-weight: 600;
 }
 @media screen and (min-width: 768px) {
   .strength__title {
@@ -471,7 +501,7 @@ body {
 .strength__text {
   max-width: 375px;
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 13px;
 }
 @media screen and (min-width: 768px) {
   .strength__text {
