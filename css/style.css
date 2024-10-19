@@ -147,6 +147,10 @@ body {
 .fv {
   background: url(../img/sp/sp-first-view.png) no-repeat top center/cover;
   padding-block: 14px 168px;
+  -webkit-animation: bg 3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+          animation: bg 3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  background: -webkit-gradient(linear, left top, right top, );
+  background: linear-gradient(to right);
 }
 @media screen and (min-width: 768px) {
   .fv {
@@ -155,8 +159,45 @@ body {
   }
 }
 
+@-webkit-keyframes bg {
+  0% {
+    opacity: 0;
+    -webkit-transform: scaleX(0) translateX(-5%);
+            transform: scaleX(0) translateX(-5%);
+  }
+  30% {
+    -webkit-transform: scaleX(1) translateX(0);
+            transform: scaleX(1) translateX(0);
+  }
+  100% {
+    -webkit-transform: scaleX(1) translateX(0);
+            transform: scaleX(1) translateX(0);
+  }
+  30%, 100% {
+    opacity: 1;
+  }
+}
+
+@keyframes bg {
+  0% {
+    opacity: 0;
+    -webkit-transform: scaleX(0) translateX(-5%);
+            transform: scaleX(0) translateX(-5%);
+  }
+  30% {
+    -webkit-transform: scaleX(1) translateX(0);
+            transform: scaleX(1) translateX(0);
+  }
+  100% {
+    -webkit-transform: scaleX(1) translateX(0);
+            transform: scaleX(1) translateX(0);
+  }
+  30%, 100% {
+    opacity: 1;
+  }
+}
 .fv__name {
-  font-size: 24px;
+  font-size: 42px;
   line-height: 1;
 }
 @media screen and (min-width: 768px) {
@@ -185,6 +226,10 @@ body {
   font-family: "Rampart One";
   font-size: 64px;
   font-weight: 400;
+  -webkit-animation: poyoyon 0.7s cubic-bezier(0.12, 0, 0.39, 0) 1 forwards;
+          animation: poyoyon 0.7s cubic-bezier(0.12, 0, 0.39, 0) 1 forwards;
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
 }
 @media screen and (min-width: 768px) {
   .fv__slogan {
@@ -192,11 +237,72 @@ body {
   }
 }
 
+@-webkit-keyframes poyoyon {
+  0% {
+    -webkit-transform: translateX(140px);
+            transform: translateX(140px);
+    opacity: 0;
+  }
+  50% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  65% {
+    -webkit-transform: translateX(30px);
+            transform: translateX(30px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  20%, 100% {
+    opacity: 1;
+  }
+}
+
+@keyframes poyoyon {
+  0% {
+    -webkit-transform: translateX(140px);
+            transform: translateX(140px);
+    opacity: 0;
+  }
+  50% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  65% {
+    -webkit-transform: translateX(30px);
+            transform: translateX(30px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  20%, 100% {
+    opacity: 1;
+  }
+}
 @media screen and (min-width: 768px) {
   .fv__text {
     font-size: 24px;
+    font-weight: 600;
     line-height: 2;
   }
+}
+
+.fade-in-up {
+  opacity: 0;
+  -webkit-transform: translateY(70px);
+          transform: translateY(70px);
+  -webkit-transition: opacity 2s, -webkit-transform 3s;
+  transition: opacity 2s, -webkit-transform 3s;
+  transition: opacity 2s, transform 3s;
+  transition: opacity 2s, transform 3s, -webkit-transform 3s;
+}
+.fade-in-up.is-in-view {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .profile__inner {
@@ -223,10 +329,11 @@ body {
 
 .profile__image {
   text-align: center;
-  -webkit-clip-path: ellipse(48% 50% at 48% 50%);
-          clip-path: ellipse(48% 50% at 48% 50%);
 }
 .profile__image img {
+  text-align: center;
+  -webkit-clip-path: ellipse(48% 50% at 48% 50%);
+          clip-path: ellipse(48% 50% at 48% 50%);
   width: 200px;
 }
 @media screen and (min-width: 768px) {

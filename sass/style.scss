@@ -199,7 +199,23 @@ body {
   @include mq(md) {
     background-image: url(../img/first-view.png);
     padding-block: 15px 215px;
-
+  }
+  animation: bg 3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  background: linear-gradient(to right);
+}
+@keyframes bg {
+  0% {
+    opacity: 0;
+    transform: scaleX(0) translateX(-5%);
+  }
+  30% {
+    transform: scaleX(1) translateX(0);
+  }
+  100% {
+    transform: scaleX(1) translateX(0);
+  }
+  30%, 100% {
+    opacity: 1;
   }
 }
 
@@ -209,7 +225,7 @@ body {
 .fv__content {}
 
 .fv__name {
-  font-size: 24px;
+  font-size: 42px;
   line-height: 1;
 
   @include mq(md) {
@@ -242,11 +258,39 @@ body {
   @include mq(md) {
     font-size: 128px;
   }
+  animation: poyoyon 0.7s cubic-bezier(0.12, 0, 0.39, 0) 1 forwards;
+  animation-delay: 1.2s;
 }
+ 
+@keyframes poyoyon {
+  0% {
+    transform: translateX(140px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0);
+  }
+  65% {
+    transform: translateX(30px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+  20%,100% {
+    opacity: 1;
+  } 
+}
+
+
+
+
+
+
 
 .fv__text {
   @include mq(md) {
     font-size: 24px;
+    font-weight: 600;
     line-height: 2;
   }
 }
@@ -254,6 +298,17 @@ body {
 
 //profile
 .profile {}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(70px);
+  transition: opacity 2s, transform 3s;
+
+  &.is-in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 .profile__inner {
   margin-top: 90px;
@@ -275,14 +330,17 @@ body {
 
 .profile__image {
   text-align: center;
-  clip-path: ellipse(48% 50% at 48% 50%);
+  
   img {
+    text-align: center;
+    clip-path: ellipse(48% 50% at 48% 50%);
     width: 200px;
 
     @include mq(md) {
       width: 300px;
     }
   }
+  
 }
 
 .profile__message {
