@@ -2,7 +2,7 @@
 /* 1⃣ブレークポイントの定義*/
 /* 2⃣mixinを記述 */
 body {
-  background: #FDEEEF;
+  background: #FFFAFB;
   font-family: "Inter", "Noto Serif JP"; /* google fonts変数 */
   color: #333333; /* フォントカラー変数 */
   font-size: 16px; /* フォントサイズ */
@@ -147,10 +147,6 @@ body {
 .fv {
   background: url(../img/sp/sp-first-view.png) no-repeat top center/cover;
   padding-block: 14px 168px;
-  -webkit-animation: bg 3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-          animation: bg 3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  background: -webkit-gradient(linear, left top, right top, );
-  background: linear-gradient(to right);
 }
 @media screen and (min-width: 768px) {
   .fv {
@@ -159,43 +155,6 @@ body {
   }
 }
 
-@-webkit-keyframes bg {
-  0% {
-    opacity: 0;
-    -webkit-transform: scaleX(0) translateX(-5%);
-            transform: scaleX(0) translateX(-5%);
-  }
-  30% {
-    -webkit-transform: scaleX(1) translateX(0);
-            transform: scaleX(1) translateX(0);
-  }
-  100% {
-    -webkit-transform: scaleX(1) translateX(0);
-            transform: scaleX(1) translateX(0);
-  }
-  30%, 100% {
-    opacity: 1;
-  }
-}
-
-@keyframes bg {
-  0% {
-    opacity: 0;
-    -webkit-transform: scaleX(0) translateX(-5%);
-            transform: scaleX(0) translateX(-5%);
-  }
-  30% {
-    -webkit-transform: scaleX(1) translateX(0);
-            transform: scaleX(1) translateX(0);
-  }
-  100% {
-    -webkit-transform: scaleX(1) translateX(0);
-            transform: scaleX(1) translateX(0);
-  }
-  30%, 100% {
-    opacity: 1;
-  }
-}
 .fv__name {
   font-size: 42px;
   line-height: 1;
@@ -228,8 +187,8 @@ body {
   font-weight: 400;
   -webkit-animation: poyoyon 0.7s cubic-bezier(0.12, 0, 0.39, 0) 1 forwards;
           animation: poyoyon 0.7s cubic-bezier(0.12, 0, 0.39, 0) 1 forwards;
-  -webkit-animation-delay: 1.2s;
-          animation-delay: 1.2s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
 }
 @media screen and (min-width: 768px) {
   .fv__slogan {
@@ -305,21 +264,21 @@ body {
           transform: translateY(0);
 }
 
-.profile__inner {
+.about__inner {
   margin-top: 90px;
 }
 @media screen and (min-width: 768px) {
-  .profile__inner {
+  .about__inner {
     margin-top: 160px;
   }
 }
 
-.profile__content {
+.about__content {
   padding-left: 30px;
   padding-right: 30px;
 }
 @media screen and (min-width: 768px) {
-  .profile__content {
+  .about__content {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -327,31 +286,31 @@ body {
   }
 }
 
-.profile__image {
+.about__image {
   text-align: center;
 }
-.profile__image img {
+.about__image img {
   text-align: center;
   -webkit-clip-path: ellipse(48% 50% at 48% 50%);
           clip-path: ellipse(48% 50% at 48% 50%);
   width: 200px;
 }
 @media screen and (min-width: 768px) {
-  .profile__image img {
+  .about__image img {
     width: 300px;
   }
 }
 
-.profile__message {
+.about__message {
   margin-top: 30px;
 }
 @media screen and (min-width: 768px) {
-  .profile__message {
+  .about__message {
     margin-top: 0;
   }
 }
 
-.profile__name {
+.about__name {
   margin-top: 30px;
   text-align: center;
   font-family: Limelight;
@@ -359,27 +318,105 @@ body {
   font-weight: 400;
 }
 @media screen and (min-width: 768px) {
-  .profile__name {
+  .about__name {
     margin-top: 0;
     text-align: left;
     font-size: 32px;
   }
 }
 
-.profile__text {
+.about__text {
   margin-top: 30px;
   font-size: 14px;
   line-height: 1.85;
 }
 @media screen and (min-width: 768px) {
-  .profile__text {
+  .about__text {
     font-size: 16px;
   }
 }
 
-.profile__button {
+.about__button {
   margin-top: 30px;
   text-align: center;
+}
+
+.about-more__inner {
+  margin-top: 90px;
+}
+@media screen and (min-width: 768px) {
+  .about-more__inner {
+    margin-top: 150px;
+  }
+}
+
+.about-more__content {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+@media screen and (min-width: 768px) {
+  .about-more__content {
+    padding-left: 50px;
+    padding-right: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    gap: 100px;
+  }
+}
+
+.about-more__image {
+  text-align: center;
+}
+.about-more__image img {
+  text-align: center;
+  -webkit-clip-path: ellipse(48% 50% at 48% 50%);
+          clip-path: ellipse(48% 50% at 48% 50%);
+  width: 200px;
+}
+@media screen and (min-width: 768px) {
+  .about-more__image img {
+    width: 300px;
+  }
+}
+
+.about-more__message {
+  margin-top: 30px;
+}
+@media screen and (min-width: 768px) {
+  .about-more__message {
+    margin-top: 0;
+  }
+}
+
+.about-more__name {
+  margin-top: 30px;
+  text-align: center;
+  font-family: Limelight;
+  font-size: 24px;
+  font-weight: 400;
+}
+@media screen and (min-width: 768px) {
+  .about-more__name {
+    margin-top: 0;
+    text-align: left;
+    font-size: 32px;
+  }
+}
+
+.about-more__text {
+  margin-top: 30px;
+  font-size: 14px;
+  line-height: 1.85;
+}
+@media screen and (min-width: 768px) {
+  .about-more__text {
+    font-size: 20px;
+  }
 }
 
 .skill__inner {
@@ -504,6 +541,11 @@ body {
 .career__inner {
   margin-top: 90px;
 }
+@media screen and (min-width: 768px) {
+  .career__inner {
+    margin-top: 150px;
+  }
+}
 
 .career__content {
   padding: 0 30px;
@@ -511,7 +553,7 @@ body {
 
 @media screen and (min-width: 768px) {
   .career__lists {
-    padding-left: 30px;
+    padding-left: 80px;
   }
 }
 
@@ -557,6 +599,11 @@ body {
 
 .strength__inner {
   margin-top: 90px;
+}
+@media screen and (min-width: 768px) {
+  .strength__inner {
+    margin-top: 150px;
+  }
 }
 
 .strength__content {
@@ -622,14 +669,17 @@ body {
   }
 }
 
-.contact__inner {
+.footer__inner {
   background: #FFCCCC;
+}
+
+.footer__contact {
   margin-top: 80px;
   padding: 10px 0;
 }
 @media screen and (min-width: 768px) {
-  .contact__inner {
-    margin-top: 100px;
+  .footer__contact {
+    margin-top: 160px;
     padding: 20px 0;
   }
 }
@@ -655,10 +705,6 @@ body {
     font-size: 80px;
     line-height: 1.5;
   }
-}
-
-.footer__inner {
-  background: #FFCCCC;
 }
 
 .footer__content {

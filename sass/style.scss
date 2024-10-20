@@ -2,7 +2,7 @@
 @use "sass:map";
 
 $main-color: #FFCCCC;
-$background-color: #FDEEEF;
+$background-color: #FFFAFB;
 $text-color:#333333;
 $font-base: "Inter", "Noto Serif JP";
 
@@ -200,24 +200,25 @@ body {
     background-image: url(../img/first-view.png);
     padding-block: 15px 215px;
   }
-  animation: bg 3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  background: linear-gradient(to right);
+  //アニメーション削除
+  // animation: bg 3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  // background: linear-gradient(to right);
 }
-@keyframes bg {
-  0% {
-    opacity: 0;
-    transform: scaleX(0) translateX(-5%);
-  }
-  30% {
-    transform: scaleX(1) translateX(0);
-  }
-  100% {
-    transform: scaleX(1) translateX(0);
-  }
-  30%, 100% {
-    opacity: 1;
-  }
-}
+// @keyframes bg {
+//   0% {
+//     opacity: 0;
+//     transform: scaleX(0) translateX(-5%);
+//   }
+//   30% {
+//     transform: scaleX(1) translateX(0);
+//   }
+//   100% {
+//     transform: scaleX(1) translateX(0);
+//   }
+//   30%, 100% {
+//     opacity: 1;
+//   }
+// }
 
 .fv__inner {}
 
@@ -259,9 +260,9 @@ body {
     font-size: 128px;
   }
   animation: poyoyon 0.7s cubic-bezier(0.12, 0, 0.39, 0) 1 forwards;
-  animation-delay: 1.2s;
+  animation-delay: 1s;
 }
- 
+
 @keyframes poyoyon {
   0% {
     transform: translateX(140px);
@@ -278,7 +279,7 @@ body {
   }
   20%,100% {
     opacity: 1;
-  } 
+  }
 }
 
 
@@ -296,8 +297,8 @@ body {
 }
 
 
-//profile
-.profile {}
+//about
+.about {}
 
 .fade-in-up {
   opacity: 0;
@@ -310,7 +311,7 @@ body {
   }
 }
 
-.profile__inner {
+.about__inner {
   margin-top: 90px;
 
   @include mq(md) {
@@ -318,7 +319,7 @@ body {
   }
 }
 
-.profile__content {
+.about__content {
   padding-left: 30px;
   padding-right: 30px;
 
@@ -328,9 +329,9 @@ body {
   }
 }
 
-.profile__image {
+.about__image {
   text-align: center;
-  
+
   img {
     text-align: center;
     clip-path: ellipse(48% 50% at 48% 50%);
@@ -340,10 +341,10 @@ body {
       width: 300px;
     }
   }
-  
+
 }
 
-.profile__message {
+.about__message {
   margin-top: 30px;
 
 
@@ -352,7 +353,7 @@ body {
   }
 }
 
-.profile__name {
+.about__name {
   margin-top: 30px;
   text-align: center;
   font-family: Limelight;
@@ -366,7 +367,7 @@ body {
   }
 }
 
-.profile__text {
+.about__text {
   margin-top: 30px;
   font-size: 14px;
   line-height: 1.85;
@@ -376,11 +377,90 @@ body {
   }
 }
 
-.profile__button {
+.about__button {
   margin-top: 30px;
   text-align: center;
 
 }
+
+
+
+//about-more
+.about-more {}
+
+.about-more__inner {
+  margin-top: 90px;
+
+  @include mq(md) {
+    margin-top: 150px;
+  }
+}
+
+.about-more__content {
+  padding-left: 30px;
+  padding-right: 30px;
+
+  @include mq(md) {
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 100px;
+  }
+}
+
+.about-more__image {
+  text-align: center;
+
+  img {
+    text-align: center;
+    clip-path: ellipse(48% 50% at 48% 50%);
+    width: 200px;
+
+    @include mq(md) {
+      width: 300px;
+    }
+  }
+
+}
+
+.about-more__message {
+  margin-top: 30px;
+
+
+  @include mq(md) {
+    margin-top: 0;
+  }
+}
+
+.about-more__name {
+  margin-top: 30px;
+  text-align: center;
+  font-family: Limelight;
+  font-size: 24px;
+  font-weight: 400;
+
+  @include mq(md) {
+    margin-top: 0;
+    text-align: left;
+    font-size: 32px;
+  }
+}
+
+.about-more__text {
+  margin-top: 30px;
+  font-size: 14px;
+  line-height: 1.85;
+
+  @include mq(md) {
+    font-size: 20px;
+  }
+}
+
+
+
+
+
 
 .skill {}
 
@@ -498,6 +578,10 @@ body {
 
 .career__inner {
 margin-top: 90px;
+
+@include mq(md) {
+  margin-top: 150px;
+}
 }
 
 .career__content {
@@ -506,7 +590,7 @@ margin-top: 90px;
 
 .career__lists {
   @include mq(md) {
-  padding-left: 30px;
+  padding-left: 80px;
   }
 }
 
@@ -544,6 +628,10 @@ margin-top: 90px;
 
 .strength__inner {
   margin-top: 90px;
+
+  @include mq(md) {
+    margin-top: 150px;
+  }
 }
 
 .strength__content {
@@ -596,15 +684,20 @@ margin-top: 90px;
 }
 
 
-.contact {}
 
-.contact__inner {
+// footer
+.footer {}
+
+.footer__inner {
   background: $main-color;
+}
+
+.footer__contact {
   margin-top: 80px;
   padding: 10px 0;
 
   @include mq(md) {
-    margin-top: 100px;
+    margin-top: 160px;
     padding: 20px 0;
   }
 }
@@ -628,14 +721,6 @@ margin-top: 90px;
     font-size: 80px;
     line-height: 1.5;
   }
-}
-
-
-// footer
-.footer {}
-
-.footer__inner {
-  background: $main-color;
 }
 
 .footer__content {
