@@ -325,7 +325,7 @@ body {
 
   @include mq(md) {
     display: flex;
-    gap: 150px;
+    gap: 70px;
   }
 }
 
@@ -370,7 +370,7 @@ body {
 .about__text {
   margin-top: 30px;
   font-size: 14px;
-  line-height: 1.85;
+  line-height: 2.3;
 
   @include mq(md) {
     font-size: 16px;
@@ -406,6 +406,7 @@ body {
     display: flex;
     flex-direction: row-reverse;
     gap: 100px;
+    align-items: center;
   }
 }
 
@@ -419,9 +420,9 @@ body {
 
     @include mq(md) {
       width: 300px;
+      height: 398px;
     }
   }
-
 }
 
 .about-more__message {
@@ -450,7 +451,7 @@ body {
 .about-more__text {
   margin-top: 30px;
   font-size: 14px;
-  line-height: 1.85;
+  line-height: 2.3;
 
   @include mq(md) {
     font-size: 20px;
