@@ -11,7 +11,7 @@ $header-height-pc: 70px;
 
 /* 1⃣ブレークポイントの定義*/
 $breakpoints: (
-  sm: "screen and (min-width: 600px)",
+  sm: "screen and (min-width: 375px)",
   md: "screen and (min-width: 768px)",
   lg: "screen and (min-width: 900px)",
   xl: "screen and (min-width: 1200px)",
@@ -21,6 +21,16 @@ $breakpoints: (
 @mixin mq($breakpoint: md) {
   @media #{map-get($breakpoints, $breakpoint)} {
     @content;
+  }
+}
+
+//スクロールの設定
+html {
+  scroll-behavior: smooth; //スムーススクロール
+  scroll-padding-top: 60px; //見出しが隠れないようパディングを設定
+
+  @include mq(md) {
+    scroll-padding-top: 70px;
   }
 }
 
@@ -94,6 +104,9 @@ body {
 
 // header
 .header {
+  position: sticky; //headerを固定する
+  top: 0;
+  z-index: 20; //headerが前面にでるように
   background: $main-color;
 }
 
@@ -122,10 +135,35 @@ body {
   }
 }
 
-.header__nav {}
+.header__nav {
+  background: $main-color;
+  width: 270px;
+  height: calc(100% - $header-height-sp);
+  position: fixed;
+  right: 0;
+  top: $header-height-sp;
+  padding: calc(40px - 8px) 15px;
+  transform: translateX(100%);/* 最初は100%右に寄せておく */
+  transition: transform 0.4s;/* 0.4秒かけて表示・非表示 */
+
+  &.is-checked {
+    transform: translateX(0%);/* is-checkedがついたら0%になるように */
+  }
+
+  @include mq(md) {
+    background: transparent;
+    width: auto;
+    height: auto;
+    position: static;
+    padding-top: 0;
+    transform: translateX(0);
+  }
+}
 
 .header__lists {
-  display: none;
+  text-align: center;
+  line-height: 2.8;
+  padding-top: 35px;
 
   @include mq(md) {
     display: flex;
@@ -138,12 +176,10 @@ body {
 }
 
 .header__link {
-  @include mq(md) {
-    font-family: Limelight;
-    font-size: 20px;
-    font-weight: 400;
-    color: #fff;
-  }
+  font-family: Limelight;
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
 }
 
 .header__icon {
@@ -156,6 +192,27 @@ body {
   width: 30px;
   height: 18px;
   position: relative;
+
+  &.is-checked {
+    .drawer-icon__bar {
+      &:nth-child(1),  /* 1番目と3番目の棒が真ん中になるように高さを設定 */
+      &:nth-child(3) {
+        top: 9px;
+      }
+
+      &:nth-child(1) {
+        transform: rotate(45deg); /* 45度回転させる */
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+
+      &:nth-child(2) {
+        display: none;
+      }
+    }
+  }
 }
 
 .drawer-icon__bar {
@@ -376,6 +433,15 @@ body {
     font-size: 16px;
   }
 }
+
+.hidden-sm {
+  display: none;
+
+  @include mq(md) {
+    display: block;
+  }
+}
+
 
 .about__button {
   margin-top: 30px;

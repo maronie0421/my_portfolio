@@ -1,6 +1,16 @@
 @charset "UTF-8";
 /* 1⃣ブレークポイントの定義*/
 /* 2⃣mixinを記述 */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 60px;
+}
+@media screen and (min-width: 768px) {
+  html {
+    scroll-padding-top: 70px;
+  }
+}
+
 body {
   background: #FFFAFB;
   font-family: "Inter", "Noto Serif JP"; /* google fonts変数 */
@@ -62,6 +72,9 @@ body {
 }
 
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
   background: #FFCCCC;
 }
 
@@ -94,8 +107,41 @@ body {
   }
 }
 
+.header__nav {
+  background: #FFCCCC;
+  width: 270px;
+  height: calc(100% - 60px);
+  position: fixed;
+  right: 0;
+  top: 60px;
+  padding: 32px 15px;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%); /* 最初は100%右に寄せておく */
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s; /* 0.4秒かけて表示・非表示 */
+}
+.header__nav.is-checked {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%); /* is-checkedがついたら0%になるように */
+}
+@media screen and (min-width: 768px) {
+  .header__nav {
+    background: transparent;
+    width: auto;
+    height: auto;
+    position: static;
+    padding-top: 0;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
 .header__lists {
-  display: none;
+  text-align: center;
+  line-height: 2.8;
+  padding-top: 35px;
 }
 @media screen and (min-width: 768px) {
   .header__lists {
@@ -106,13 +152,11 @@ body {
   }
 }
 
-@media screen and (min-width: 768px) {
-  .header__link {
-    font-family: Limelight;
-    font-size: 20px;
-    font-weight: 400;
-    color: #fff;
-  }
+.header__link {
+  font-family: Limelight;
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
 }
 
 @media screen and (min-width: 768px) {
@@ -125,6 +169,20 @@ body {
   width: 30px;
   height: 18px;
   position: relative;
+}
+.drawer-icon.is-checked .drawer-icon__bar:nth-child(1), .drawer-icon.is-checked .drawer-icon__bar:nth-child(3) {
+  top: 9px;
+}
+.drawer-icon.is-checked .drawer-icon__bar:nth-child(1) {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg); /* 45度回転させる */
+}
+.drawer-icon.is-checked .drawer-icon__bar:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.drawer-icon.is-checked .drawer-icon__bar:nth-child(2) {
+  display: none;
 }
 
 .drawer-icon__bar {
@@ -333,6 +391,15 @@ body {
 @media screen and (min-width: 768px) {
   .about__text {
     font-size: 16px;
+  }
+}
+
+.hidden-sm {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .hidden-sm {
+    display: block;
   }
 }
 
