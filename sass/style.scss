@@ -86,6 +86,22 @@ body {
 
 }
 
+//topへ戻るボタン
+.button-top {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  font-size: 20px;
+  line-height: 20px;
+  background: #fff;
+  color: #737373;
+  padding: 10px;
+  border: solid 1px;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px -6px rgba(0,0,0,.5), 0 3px 10px -4px rgba(0,0,0,.2);
+}
+
+
 .section {}
 
 .section__head {}
@@ -283,7 +299,7 @@ body {
 .fv__content {}
 
 .fv__name {
-  font-size: 42px;
+  font-size: 35px;
   line-height: 1;
 
   @include mq(md) {
@@ -312,6 +328,10 @@ body {
   font-family: "Rampart One";
   font-size: 64px;
   font-weight: 400;
+
+  @include mq(sm) {
+    font-size: 80px;
+  }
 
   @include mq(md) {
     font-size: 128px;
@@ -382,6 +402,11 @@ body {
 
   @include mq(md) {
     display: flex;
+    gap: 35px;
+  }
+
+  @include mq(lg) {
+    display: flex;
     gap: 70px;
   }
 }
@@ -427,9 +452,17 @@ body {
 .about__text {
   margin-top: 30px;
   font-size: 14px;
-  line-height: 2.3;
+  line-height: 2.2;
 
   @include mq(md) {
+    font-size: 10px;
+  }
+
+  @include mq(lg) {
+    font-size: 12px;
+  }
+
+  @include mq(xl) {
     font-size: 16px;
   }
 }
@@ -457,8 +490,8 @@ body {
 .about-more__inner {
   margin-top: 90px;
 
-  @include mq(md) {
-    margin-top: 150px;
+  @include mq(lg) {
+    margin-top: 100px;
   }
 }
 
@@ -466,12 +499,12 @@ body {
   padding-left: 30px;
   padding-right: 30px;
 
-  @include mq(md) {
+  @include mq(xl) {
     padding-left: 50px;
     padding-right: 50px;
     display: flex;
     flex-direction: row-reverse;
-    gap: 100px;
+    gap: 70px;
     align-items: center;
   }
 }
@@ -495,7 +528,7 @@ body {
   margin-top: 30px;
 
 
-  @include mq(md) {
+  @include mq(lg) {
     margin-top: 0;
   }
 }
@@ -508,6 +541,10 @@ body {
   font-weight: 400;
 
   @include mq(md) {
+    font-size: 30px;
+  }
+
+  @include mq(lg) {
     margin-top: 0;
     text-align: left;
     font-size: 32px;
@@ -520,7 +557,15 @@ body {
   line-height: 2.3;
 
   @include mq(md) {
-    font-size: 20px;
+    font-size: 16px;
+  }
+
+  .hidden-sm {
+    display: none;
+
+    @include mq(xl) {
+      display: block;
+    }
   }
 }
 
@@ -545,10 +590,14 @@ body {
 .skill__icons--bottom {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 20px;
 
   @include mq(md) {
-    gap: 120px;
+    gap: 70px;
+  }
+
+  @include mq(lg) {
+    gap: 100px;
   }
 }
 
@@ -562,8 +611,12 @@ body {
 
 
 .skill__icon {
-  font-size: 70px;
+  font-size: 60px;
   text-align: center;
+
+  @include mq(sm) {
+    font-size: 70px;
+  }
 
   @include mq(md) {
     font-size: 90px;
@@ -577,6 +630,26 @@ body {
     }
   }
 }
+
+.skill__message {
+  margin-top: 50px;
+
+  @include mq(lg) {
+    max-width: 1200px;
+    padding-inline: 60px;
+  }
+}
+
+.skill__text {
+  font-size: 14px;
+  line-height: 2.2;
+
+  @include mq(lg) {
+    font-size: 16px;
+  }
+}
+
+
 
 .works {}
 
@@ -657,7 +730,7 @@ margin-top: 90px;
 
 .career__lists {
   @include mq(md) {
-  padding-left: 80px;
+  padding-left: 30px;
   }
 }
 
@@ -737,16 +810,18 @@ margin-top: 90px;
 }
 
 .strength__text {
-  max-width: calc(345px + 15px * 2);
+  max-width: 900px;
   margin-top: 10px;
   font-size: 13px;
 
   @include mq(md) {
+  }
+
+  @include mq(lg) {
     max-width: 900px;
     margin-top: 0;
-    @include mq(md) {
-      font-size: 20px;
-    }
+    font-size: 20px;
+
   }
 }
 
@@ -785,7 +860,7 @@ margin-top: 90px;
   margin-top: 10px;
 
   @include mq(md) {
-    font-size: 80px;
+    font-size: 60px;
     line-height: 1.5;
   }
 }
@@ -795,6 +870,8 @@ margin-top: 90px;
   flex-direction: column;
 
   @include mq(md) {
+    max-width: 1280px;
+    padding-inline: 100px;
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
@@ -817,12 +894,3 @@ margin-top: 90px;
   color: #fff;
   text-align: center;
 }
-
-
-
-
-
-
-
-
-
