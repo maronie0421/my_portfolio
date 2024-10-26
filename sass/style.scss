@@ -88,13 +88,15 @@ body {
 
 //topへ戻るボタン
 .button-top {
+  display: none;
   position: fixed;
-  right: 10px;
+  right: 25px;
   bottom: 10px;
-  font-size: 20px;
-  line-height: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 30px;
   background: #fff;
-  color: #737373;
+  color: $main-color;
   padding: 10px;
   border: solid 1px;
   border-radius: 50%;
@@ -639,6 +641,11 @@ body {
     padding-inline: 60px;
   }
 }
+.skill__title {
+  font-size: 22px;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
 
 .skill__text {
   font-size: 14px;
@@ -836,11 +843,11 @@ margin-top: 90px;
 
 .footer__contact {
   margin-top: 80px;
-  padding: 10px 0;
+  padding: 60px 0;
 
   @include mq(md) {
     margin-top: 160px;
-    padding: 20px 0;
+    padding: 80px 0;
   }
 }
 
@@ -857,7 +864,11 @@ margin-top: 90px;
   font-size: 30px;
   font-style: italic;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 25px;
+
+  @include mq(sm) {
+    font-size: 40px;
+  }
 
   @include mq(md) {
     font-size: 60px;
